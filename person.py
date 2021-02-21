@@ -126,7 +126,7 @@ class Validator():
         self.study = study
         self.bad_chars = '!"@#$%^&*()_=+,<>/?;:[]{}\)'
         self.bad_characters = '!"\'#$%^&*()=+,<>/?;:[]{}\)'
-        self.maxlen = 7
+
     
     def Email_Checker(self):
         """
