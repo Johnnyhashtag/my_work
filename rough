@@ -1,0 +1,43 @@
+mpin = int(input('Desired pin'))
+mpwd = input('Password: ')
+# Save managers login credentials in a dictionary
+maccounts[muser] = [mpin,mpwd]
+ 
+# Managers login, create and management area
+caccounts = {}
+prompt = f'Welcome {muser} to account management services.\n'
+prompt += 'please choose a service.\ncreate-manage-login'
+print(prompt)
+print()
+ 
+service = input('')
+if service.lower() == 'login':
+ 
+    pwd = input('Please enter admin password: ')
+    user = input('Enter username: ')
+    if pwd != mpwd and user != muser:
+        print('You have entered wrong user and password.')
+    elif pwd != mpwd or user != muser:
+        print('You have entered the wrong user or password.')
+        
+    else:
+        print(f'welcome {muser}')
+# ACCOUNT CREATION..
+# ADMIN USER ID VERIFICATION..
+elif service.lower() == 'create':
+    user = input('Enter username: ')
+    pwd = input('Please enter admin password: ')
+    if pwd != mpwd and user != muser:
+        print('You have entered wrong user and password.')
+    elif pwd != mpwd or user != muser:
+        print('You have entered the wrong user or password.')
+    else:
+        print(f'welcome {muser}')
+        # CREATE NEW ACCOUNT..
+        acct_db = list(range(2001, 2051))
+        cuser = acct_db.pop()
+        cpin = int(input('User pin to create: '))
+        balance = int(input('New user balance: '))
+        caccounts[cuser] = cpin
+        print('Account created')
+        print(f'Welcome {cuser} to accounts home.')
