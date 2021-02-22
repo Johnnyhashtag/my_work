@@ -31,9 +31,9 @@ class Validator():
         All attributes of the class has default value of empty string.
         """
 
-    def __init__(self, user_id='', user_name=''):
+    def __init__(self, user_pin='', user_name=''):
         '''Initialising attributes for Validator class'''
-        self.user_id = user_id
+        self.user_pin = user_pin
         self.user_name = user_name
         self.bad_chars = '0123456789!"@#$%^&*()_=+,<>/?;:[]{}\)'
  
@@ -45,18 +45,18 @@ class Validator():
             Method returns in event of bad character in userID.
         """
         
-        if self.user_id:
+        if self.user_pin:
             
             
             
             # if all characters in str(id) is an integer.
-            if self.user_id.isnumeric():
+            if self.user_pin.isnumeric():
                 
                 # Check if length of id supplied is less than or equal to maximum length.
                 # Return ID
-                if len(self.user_id) <= max_length:
+                if len(self.user_pin) <= max_length:
 
-                    return self.user_id
+                    return self.user_pin
                     
                 
                 # exit 
