@@ -1,4 +1,7 @@
+# Import modules
+
 from person import Person, Instructor, Student, Validator
+
 college_records = []
 # Start of while loop
 while True:
