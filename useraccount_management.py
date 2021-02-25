@@ -40,7 +40,7 @@ while not pin_ok:
         print(f'Hi {validate_user.Name_Checker()}.\nPlease enter password.')
         pin_ok = True
 
-# Ask user for desired password and do a password validation.
+# Ask user for desired password and do a password validation .
 pwd_ok = False
 while not pwd_ok:
 
