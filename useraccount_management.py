@@ -5,11 +5,12 @@ from user import  User, Validator
 # Save account details in dictionary.
 maccounts = {}
 user_ok = False
+
+# Ask user for input and check that requirement for each input are met.
 while not user_ok:
     
     # Welcome manager and take user input.
-
-    
+    print('Welcome!')    
     muser = input('Enter desired username: ')
     user_check = User(user_name=muser)
     validate_user = Validator(user_name=user_check.user_name)
@@ -21,6 +22,8 @@ while not user_ok:
     else:
         print(f'Hi {validate_user.Name_Checker()}.\nPlease enter pin and password.')
         user_ok = True
+
+# Ask user for desired pin and do a pin validation check.
 
 pin_ok = False
 while not pin_ok:
@@ -37,7 +40,7 @@ while not pin_ok:
         print(f'Hi {validate_user.Name_Checker()}.\nPlease enter password.')
         pin_ok = True
 
-# create password validation
+# Ask user for desired password and do a password validation.
 pwd_ok = False
 while not pwd_ok:
 
@@ -55,7 +58,7 @@ while not pwd_ok:
     
 maccounts[validate_user.Name_Checker()] = [validate_pin.ID_check(4), validate_pwd.Pass_Checker()]
 
-
+print('Welcome to account manangement area.')
 
 
 
