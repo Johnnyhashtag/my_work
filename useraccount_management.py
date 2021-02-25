@@ -1,9 +1,9 @@
-from typing import ContextManager
+
 from user import  User, Validator
 
 # welcome and create account user, pin and password for manager.
 # Save account details in dictionary.
-maccounts = {'uid': }
+maccounts = {}
 user_ok = False
 while not user_ok:
     
@@ -36,6 +36,26 @@ while not pin_ok:
     else:
         print(f'Hi {validate_user.Name_Checker()}.\nPlease enter password.')
         pin_ok = True
+
+# create password validation
+pwd_ok = False
+while not pwd_ok:
+
+    pwd = input('Desired pass: ')
+
+    password = User(pass_wd=pwd)
+    validate_pwd = Validator(user_pwd=password.pass_wd)
+
+    if validate_pwd.Pass_Checker() == None:
+        print('Password is not acceptable pass, please try again')
+        pwd_ok = False
+    else:
+        print(f'Hi {validate_user.Name_Checker()}.\nYour username, password and pin is now been saved.')
+        pwd_ok = True
+    
+maccounts[validate_user.Name_Checker()] = [validate_pin.ID_check(4), validate_pwd.Pass_Checker()]
+
+
 
 
 

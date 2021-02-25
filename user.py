@@ -31,11 +31,13 @@ class Validator():
         All attributes of the class has default value of empty string.
         """
 
-    def __init__(self, user_pin='', user_name=''):
+    def __init__(self, user_pin='', user_name='', user_pwd=''):
         '''Initialising attributes for Validator class'''
         self.user_pin = user_pin
         self.user_name = user_name
+        self.user_pwd = user_pwd
         self.bad_chars = '0123456789!"@#$%^&*()_=+,<>/?;:[]{}\)'
+        self.bad_pwd_chars = '!"@#$%^&*()_=+,<>/?;:[]{}\)'
  
     def ID_check(self, max_length):
         """
@@ -110,5 +112,39 @@ class Validator():
         
         # return name in title case.
         return self.user_name.title()
+        
+    def Pass_Checker(self):
+        """
+        Description:
+            Method checks pass for validity and returns <valid pwd> .
+            Method returns nothing in event of bad character in pwd.
+        """
+        # Strip of whitespaces from pass.
+        self.user_pwd = self.user_pwd.strip()
+        
+        # Making sure name argument supplied at call to function is not an empty string.
+        
+        if self.user_pwd:
+            
+            # using for loop to iterate over the characters in pass
+            for chars in self.user_pwd:
+                
+                # Make sure no bad characters in pass using 'not in' to check.
+                if chars not in self.bad_pwd_chars:
+                    
+                    continue
+                
+                # else exit.
+                else:
+                    
+                    return 'erroline'
+            
+        # else exit.
+        else:
+            
+            return 'this line broke'
+        
+        # return name in title case.
+        return self.user_pwd
  
 
