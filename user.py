@@ -111,7 +111,7 @@ class Validator():
             return
         
         # return name in title case.
-        return self.user_name.title()
+        return self.user_name
         
     def Pass_Checker(self):
         """
