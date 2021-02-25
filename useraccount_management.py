@@ -57,6 +57,7 @@ while not pwd_ok:
         pwd_ok = True
     
 maccounts[validate_user.Name_Checker()] = [validate_pin.ID_check(4), validate_pwd.Pass_Checker()]
+print(maccounts)
 
 # Managers login, create and management area
 prompt = f'Welcome {validate_user.Name_Checker()} to account management services.\n'
@@ -78,37 +79,68 @@ while not service_ok:
 
         if validate_user_login.Name_Checker() in maccounts.keys():
             print('Please enter your password:')
+            service_ok=True
 
-            user_password = input('User password: ')
 
-            user_password_ojbect = User(pass_wd=user_password)
-            validate_pwd_object = Validator(user_pwd=user_password_ojbect.pass_wd)
 
-            for key, value in maccounts.items():
-                if validate_pwd_object.Pass_Checker() in value:
-                    print('Please enter your pin:')
+            user_password_ok=False
+            while not user_password_ok:
+                user_password = input('User password: ')
 
-                    user_pin_input = input('User pin: ')
-                    user_pin_ojbect = User(user_pin=user_pin_input)
-                    validate_pin_object = Validator(user_pin=user_pin_ojbect.user_pin)#
+                user_password_ojbect = User(pass_wd=user_password)
+                validate_pwd_object = Validator(user_pwd=user_password_ojbect.pass_wd)
+
+                for key, value in maccounts.items():
+
+                    if validate_pwd_object.Pass_Checker() in value:
+                        print('Please enter your pin:')
+                        service_ok=True
+
+
+                        user_pin_ok=False
+                        while not user_pin_ok:
+
+                            user_pin_input = input('User pin: ')
+                            user_pin_ojbect = User(user_pin=user_pin_input)
+                            validate_pin_object = Validator(user_pin=user_pin_ojbect.user_pin)#
+                                
+                            for key, value in maccounts.items():
+                                
+                                if validate_pin_object.ID_check(4) in value:
+                                    print('Welcome to account home!')
+                                    service_ok = True
+
+                                else:
+                                    print('Please check user pin.')
+                                    user_pin_ok = False
+
+                    else:
+                        user_password_ok=False
+    
+    else:
+        print()
+
+
                     
-                    for key, value in maccounts.items():
-                        
-                        if validate_pin_object.ID_check(4) in value:
-                            print('Welcome to account home!')
-                            service_ok = True
 
-                        else:
-                            print('Please check user pin.')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     
-                else:
-                    print('You have entered incorrect password.')
 
-
-        else:
-
-            print('Please check username.')
-            
+    
 
 
 
