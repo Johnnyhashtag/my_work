@@ -1,7 +1,3 @@
-mpin = int(input('Desired pin'))
-mpwd = input('Password: ')
-# Save managers login credentials in a dictionary
-maccounts[muser] = [mpin,mpwd]
  
 # Managers login, create and management area
 caccounts = {}

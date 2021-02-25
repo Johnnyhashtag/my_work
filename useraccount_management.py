@@ -58,7 +58,23 @@ while not pwd_ok:
     
 maccounts[validate_user.Name_Checker()] = [validate_pin.ID_check(4), validate_pwd.Pass_Checker()]
 
-print('Welcome to account manangement area.')
+# Managers login, create and management area
+prompt = f'Welcome {validate_user.Name_Checker()} to account management services.\n'
+prompt += 'please choose a service.\nC to create - M to manage - L to login'
+
+print(prompt)
+
+service_ok = False
+while not service_ok:
+
+    service = input('Please choose a service: ')
+
+    if service.lower() == 'l':
+
+        user_login = input('User login: ')
+
+        
+
 
 
 
