@@ -3,6 +3,7 @@ from user import  User, Validator
 
 # welcome and create account user, pin and password for manager.
 # Save account details in dictionary.
+#TODO: save user input into  database retrieve user data from database,more account management services.
 maccounts = {'trey': ['1234', 'pass']}
 
 
@@ -137,9 +138,6 @@ while not service_ok:
                     service_ok = True
     
                 maccounts[validate_user.Name_Checker()] = [validate_pin.ID_check(4), validate_pwd.Pass_Checker()]
-
-
-print(maccounts)
 
 
 
