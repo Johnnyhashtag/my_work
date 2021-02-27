@@ -39,7 +39,7 @@ class Validator():
         self.bad_chars = '0123456789!"@#$%^&*()_=+,<>/?;:[]{}\)'
         self.bad_pwd_chars = '!"@#$%^&*()_=+,<>/?;:[]{}\)'
  
-    def ID_check(self, max_length):
+    def Pin_Checker(self, max_length):
         """
         Description:
             Method checks user ID for maximum length and returns <user ID> .
@@ -76,7 +76,7 @@ class Validator():
             
             return 'None'
  
-    def Name_Checker(self):
+    def User_Name_Checker(self):
         """
         Description:
             Method checks user name for validity and returns <valid name> .
