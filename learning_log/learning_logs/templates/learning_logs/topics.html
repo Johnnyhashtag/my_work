@@ -1,0 +1,25 @@
+<! Inherit from base.html >
+{% extends "learning_logs/base.html" %}
+
+{% block content %}
+<! open content block>
+
+ <p>Topics</p>
+<ul>
+    <! template tag equivalent to a for loop >
+    <! looping through list of topics from context dictionary>
+ {% for topic in topics %}
+ <li>{{ topic }}</li>
+
+ <! if no items in topics list >
+ {% empty %}
+
+ <! print no topics have been added yet >
+ <li>No topics have been added yet.</li>
+<! this is not python >
+ <! end of loop >
+ {% endfor %}
+ </ul>
+
+<! end of block content >
+{% endblock content %}
