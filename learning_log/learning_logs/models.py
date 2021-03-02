@@ -1,6 +1,6 @@
 from django.db import models
 from django.db.models.deletion import CASCADE
-from django.db.models.fields import CharField, DateTimeField
+from django.db.models.fields  import CharField, DateTimeField
 
 # Create your models here.
 class Topic(models.Model):
